@@ -1,12 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const {getOutlets, addOutlet, deleteOutlet} = require('../controllers/outletController')
+const {getOutlets, getOutletsID,newOutlet, deletOutlet} = require('../controllers/outletController')
 
 router.get('/', getOutlets)
 
-router.post('/', addOutlet)
+router.delete('/:id', getOutletsID)
 
-router.delete('/:id', deleteOutlet)
+router.post('/', newOutlet)
+
+router.delete('/:id', deletOutlet)
 
 
 module.exports = router
